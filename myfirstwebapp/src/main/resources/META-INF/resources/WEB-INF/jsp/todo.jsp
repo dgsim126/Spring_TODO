@@ -11,6 +11,7 @@
 			<h1>Enter Todo Details</h1>
 			<form:form method="post" modelAttribute="todo"> <!-- modelAttribute의 내용을 묶음 -->
 				Description: <form:input type="text"  path="description" required="required"/>
+				<form:errors path="description" cssClass="text-warning"/>
 				<form:input type="hidden"  path="id"/> <!-- path를 통해 Todo.java의 id로 값 할당 -->
 				<form:input type="hidden"  path="done"/>
 				<input type="submit" class="btn btn-success"/>
