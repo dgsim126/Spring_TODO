@@ -30,8 +30,9 @@ public class TodoController {
 		return "listTodos";
 	}
 	
-	@RequestMapping(value="add-todo", method=RequestMethod.GET)
-	public String showNewTodoPage(ModelMap model) {
+	@RequestMapping(value="add-todo", method=RequestMethod.GET) 
+	public String showNewTodoPage(ModelMap model) { 
+		// 아래 내용은 입력받는 폼을 초기화하기 위해 사용
 		String username= (String)model.get("name");
 		Todo todo= new Todo(0, username, "", LocalDate.now().plusYears(1), false);
 		model.put("todo", todo);
@@ -39,7 +40,7 @@ public class TodoController {
 	}
 	
 	@RequestMapping(value="add-todo", method=RequestMethod.POST)
-	public String addNewTodoPage(ModelMap model, Todo todo) {
+	public String addNewTodoPage(ModelMap model, Todo todo) { // todo.jsp의 modelAttribute로부터 Todo todo를 받아옴
 		String username= (String)model.get("name");
 		todoService.addTodo(username, todo.getDescription(), LocalDate.now().plusYears(1), false);
 		return "redirect:list-todos";
