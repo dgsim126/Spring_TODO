@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @SessionAttributes("name")
 public class LoginController {
 	
-	private AuthenticationService authenticationService;
+	private AuthenticationService authenticationService; // 로그인 인증을 위해
 	
 	public LoginController(AuthenticationService authenticationService) {
 		super();
