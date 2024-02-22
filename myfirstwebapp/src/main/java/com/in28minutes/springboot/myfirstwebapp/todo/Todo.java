@@ -2,14 +2,24 @@ package com.in28minutes.springboot.myfirstwebapp.todo;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
 //Database (MySQL) 
 //Static List of todos => Database (H2, MySQL)
 
+//해당 클래스가 데이터베이스에 테이블로 등장
+@Entity 
 public class Todo {
-
+	
+	@Id // primary key
+	@GeneratedValue 
 	private int id;
+	
+	// @Column(name="name") // 데이터베이스에서 username이 아닌 name이 사용됨	
 	private String username;
 	
 	@Size(min=10, message="Enter at least 10 charaters") // @Valid와 묶어서 사용
