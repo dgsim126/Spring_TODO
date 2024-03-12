@@ -14,7 +14,7 @@ public class SayHelloController {
 	@RequestMapping("say-hello")
 	@ResponseBody
 	public String sayHello() {
-		return "Hello! What are you learning today?";
+		return "Hello!! What are you learning today?";
 	}
 	
 	@RequestMapping("say-hello-html")
